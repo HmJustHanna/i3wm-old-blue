@@ -1,0 +1,58 @@
+[options]
+allow_bold = false 
+clickable_url = true
+dynamic_title = true
+font =  Consolas 18
+scrollback_lines = 10000
+browser = vieb 
+
+# "system", "on" or "off"
+cursor_blink = off
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+#bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
+mouse_autohide = true
+#search_wrap = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+#size_hints = false
+# ====================================
+[colors]
+
+# Black
+color0=   #000040
+color8=   #000040
+
+# Red
+color1=   #ff00ff
+color9=   #ff00ff
+
+# Green
+color2=   #90f020
+color10=  #90f020
+
+# Yellow
+color3=   #ffa500
+color11=  #ffa500
+
+# Blue
+color4=   #0030ff
+color12=  #0030ff
+
+# Magenta
+color5=   #ff80ff
+color13=  #ff80ff
+
+# Cyan
+color6=   #008b8b
+color14=  #008b8b
+
+# White
+color7=   #c0c0c0
+color15=  #c0c0c0
+
+# vim: et sw=2 syn=xdefaults

@@ -1,0 +1,55 @@
+set font "consolas 16"
+
+set notification-error-bg       "#ff0000" 
+set notification-error-fg       "#000040"
+set notification-warning-bg     "#000040"
+set notification-warning-fg     "#80a0ff"
+set notification-bg             "#282a36"
+set notification-fg             "#f8f8f2"
+
+set completion-bg               "#c0c0c0"
+set completion-fg               "#000040"
+set completion-group-bg         "#c0c0c0"
+set completion-group-fg         "#000040"
+set completion-highlight-bg     "#000040"
+set completion-highlight-fg     "#c0c0c0"
+
+set index-bg                    "#c0c0c0"
+set index-fg                    "#000040"
+set index-active-bg             "#000040"
+set index-active-fg             "#c0c0c0"
+
+set inputbar-bg                 "#000040"
+set inputbar-fg                 "#c0c0c0"
+set statusbar-bg                "#c0c0c0"
+set statusbar-fg                "#000040"
+
+set highlight-color             "#c0c0c0"
+set highlight-active-color      "#ff0000"
+
+set default-bg                  "#000040"
+set default-fg                  "#c0c0c0"
+
+set render-loading              true
+set render-loading-fg           "#000040"
+set render-loading-bg           "#c0c0c0"
+
+set recolor-lightcolor          "#000040"
+set recolor-darkcolor           "#c0c0c0"
+
+set adjust-open width
+set recolor true
+set window-height 1024
+set window-width 768
+set adjust-open width
+
+set database sqlite
+
+map K navigate previous
+map J navigate next
+map + zoom in
+map - zoom out
+map i recolor
+map D toogle_page_mode
+map q quit
+

@@ -1,0 +1,127 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+    colors = true 
+    color_good = "#90f020"
+    color_bad = "#ff00ff"
+    color_degraded = '#ffa500'
+
+    interval = 5
+    output_format = i3bar
+    separator = false
+}
+
+order += "tztime localdate"
+order += "tztime localtime"
+order += "battery 0"
+order += "volume master"
+order += "wireless _first_"
+order += "ethernet _first_"
+#order += "disk /"
+order += "cpu_temperature 1"
+order += "cpu_usage"
+#order += "ipv6"
+#order += "run_watch VPN"
+#order += "path_exists VPN"
+#order += "run_watch DHCP"
+#order += "ethernet enp7s0"
+#order += "load"
+#order += "cpu_temperature 2"
+
+ipv6
+{
+    format_down = ""
+}
+
+cpu_temperature 1
+{
+    format = "%degrees°C "
+        path = "/sys/class/thermal/thermal_zone2/temp"
+}
+
+cpu_temperature 2
+{
+    format = "%degrees°C"
+        path = "/sys/class/drm/card0/device/hwmon/hwmon1/temp1_input"
+}
+
+wireless _first_ {
+    format_up = "W: (%quality at %essid)"
+        format_down = "W:"
+}
+
+ethernet _first_ {
+
+# if you use %speed, i3status requires root privileges
+    format_up = "E:%interface %ip"
+        format_down = "E:"
+}
+
+
+ethernet enp7s0 {
+# if you use %speed, i3status requires root privileges
+    format_up = "%interface %ip (%speed)"
+        format_down = "%interface"
+}
+
+
+battery 0 {
+    format = "%status %percentage"
+        format_down = "No battery"
+        path = "/sys/class/power_supply/BAT1/uevent"
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+        format = "%title"
+        format_down = ""
+}
+
+
+path_exists VPN {
+# path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+        separator = false
+        separator_block_width = 8
+        format = " "
+        format_down = " "
+}
+
+run_watch VPN {
+    pidfile = "/var/run/NetworkManager/nm-openvpn-*"
+}
+
+tztime localtime {
+    format = "%H:%M"
+        timezone = "Europe/Minsk"
+}
+
+tztime localdate {
+    format = "%d/%m/%Y"
+}
+
+# load {
+#         format = "%5min"
+# }
+
+disk "/" {
+    format = "DISK: %avail"
+        prefix_type = custom
+}
+
+volume master {
+    format = " %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "pulse:0"
+}
+
+cpu_usage {
+    format = "%usage"
+}
+

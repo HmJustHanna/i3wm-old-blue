@@ -1,0 +1,210 @@
+# i3 config file
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+
+
+#APPS and KEYBINDINGS
+
+# exec_always --no-startup-id compton --config /home/anna/.config/compton.conf
+
+exec_always --no-startup-id "~/Scripts/i3/.fehbg"
+exec        --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+exec        --no-startup-id clipit
+
+bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym Print exec  scrot $HOME/Pics/Screen/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+Return exec termite 
+bindsym $mod+Shift+x exec /home/anna/Scripts/i3wm/lock.sh 
+
+#bindsym $mod+Shift+x exec "/usr/local/bin/lock-blur.sh"
+#exec xautolock -detectsleep -time 5 -locker "/usr/local/bin/lock-blur.sh" \
+#  -notify 30 \
+#  -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+bindsym $mod+m exec termite -e  mocp
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec --no-startup-id "i3-msg exit" 
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+f floating toggle
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+bindsym XF86MonBrightnessUp exec xbacklight +1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -1 # decrease screen brightness
+
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+
+
+# COLORS
+
+
+
+set $bg_active                  #c0c0c0
+set $bg_inactive                #070858
+
+set $border_active              $bg_active
+set $border_inactive            $bg_inactive
+
+set $text_active                #070858
+set $text_inactive              #c0c0c0
+
+set $bg_active_workspace        #c0c0c0
+set $bg_inactive_workspace      #070858
+
+set $bg_bar                     #000040
+set $indicator                  #03C0FF
+
+
+# GAPS
+
+# nope :)
+
+# WINDOWS
+
+
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango: Consolas 18
+set $mod Mod4
+
+for_window [class="^.*"] border pixel 5 
+for_window [class="i3bar"] gaps outer current set 0 
+#for_window [class="Termite"] floating enable
+#for_window [class="Termite"] move position center
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+#for_window [window_role="GtkFileChooserDialog"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+# window colors         border              background          text                 indicator
+client.focused          $border_active      $bg_active          $text_active         $border_active
+client.unfocused        $border_inactive    $bg_inactive        $text_inactive       $border_inactive
+client.focused_inactive $border_inactive    $bg_inactive        $text_inactive       $border_inactive
+client.urgent           $border_urgent      $bg_urgen           $text-color          $border_urgen
+
+
+
+# BAR
+
+
+
+bar {
+#    mode hide
+#    hidden_state show
+
+	status_command i3status
+	position top
+	colors {
+        background          $bg_bar
+		focused_workspace   $bg_active            $bg_active_workspace    $text_active
+        inactive_workspace  $bg_inactive_workspace    $bg_inactive_workspace  $text_inactive
+        active_workspace    $bg_inactive_workspace    $bg_inactive_workspace  $text_inactive
+        statusline #c0c0c0
+ 	}
+    separator_symbol " "
+}
+
+
+
+# WORKSPACES
+
+
+
+set $wspace1 "1"
+set $wspace2 "2"
+set $wspace3 "3"
+set $wspace4 "4"
+set $wspace5 "5"
+set $wspace6 "6"
+set $wspace7 "7"
+set $wspace8 "8"
+set $wspace9 "9"
+set $wspace10 "10"
+
+bindsym $mod+1 workspace $wspace1 
+bindsym $mod+2 workspace $wspace2
+bindsym $mod+3 workspace $wspace3
+bindsym $mod+4 workspace $wspace4
+bindsym $mod+5 workspace $wspace5
+bindsym $mod+6 workspace $wspace6
+bindsym $mod+7 workspace $wspace7
+bindsym $mod+8 workspace $wspace8
+bindsym $mod+9 workspace $wspace9
+bindsym $mod+0 workspace $wspace10
+
+bindsym $mod+Shift+1 move container to workspace $wspace1 
+bindsym $mod+Shift+2 move container to workspace $wspace2
+bindsym $mod+Shift+3 move container to workspace $wspace3
+bindsym $mod+Shift+4 move container to workspace $wspace4
+bindsym $mod+Shift+5 move container to workspace $wspace5
+bindsym $mod+Shift+6 move container to workspace $wspace6
+bindsym $mod+Shift+7 move container to workspace $wspace7
+bindsym $mod+Shift+8 move container to workspace $wspace8
+bindsym $mod+Shift+9 move container to workspace $wspace9
+bindsym $mod+Shift+0 move container to workspace $wspace10
+
+assign [class="Vieb"] $wspace2
+assign [title="mocp"] $wspace3
+assign [title="firefox"] $wspace4
+assign [class="zathura"] $wspace5
+assign [class="TelegramDesktop"] $wspace6
+
+bindsym $mod+c exec termite -e '/home/anna/tty-clock/tty-clock -c'
+
+
