@@ -1,13 +1,13 @@
 
-#About
+# About
 
-Theme is inspired by [vim darkblue colorscheme](github.com/vim/colorschemes/blob/master/colors/darkblue.vim)
+My second i3wm rice. Theme is inspired by [vim darkblue colorscheme](github.com/vim/colorschemes/blob/master/colors/darkblue.vim)
 
-#Main packages installed
+# Main packages installed
 
 `sudo apt install i3status feh rofi eog moc zathura scrot`
 
-#Screenshots
+# Screenshots
 
 ![moc](/assets/images/moc.png)
 ![vim](/assets/images/vim.png)
