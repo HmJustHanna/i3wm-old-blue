@@ -9,11 +9,11 @@ My second i3wm rice. Theme is inspired by [vim darkblue colorscheme](github.com/
 
 # Screenshots
 
-![moc](/assets/images/moc.png)
-![vim](/assets/images/vim.png)
-![zathura](/assets/images/zathura.png)
-![neofetch](/assets/images/neofetch.png)
-![tty-clock](/assets/images/tty-clock.png)
+![moc](/assets/moc.png)
+![vim](/assets/vim.png)
+![zathura](/assets/zathura.png)
+![neofetch](/assets/neofetch.png)
+![tty-clock](/assets/tty-clock.png)
 
 
 
