@@ -1,5 +1,19 @@
-![2024-01-01-180358_1366x768_scrot](https://github.com/HmJustHanna/i3wm-old-blue/assets/143994527/fa61882f-27dd-46d7-9d96-a2ce160605dd)
-![2024-01-01_00:35:36](https://github.com/HmJustHanna/i3wm-old-blue/assets/143994527/153b3bff-0f7d-4a04-be09-c064aff90db5)
-![2024-01-01_00:43:22](https://github.com/HmJustHanna/i3wm-old-blue/assets/143994527/8fd8103f-63b8-4d07-a421-cb21d5943337)
-![2024-01-01_00:34:40](https://github.com/HmJustHanna/i3wm-old-blue/assets/143994527/f8114119-17d3-4dfe-9a0d-019e335922f0)
-![2024-01-01_00:42:06](https://github.com/HmJustHanna/i3wm-old-blue/assets/143994527/bcf65a65-6bf3-4538-90ca-ae239f7378f2)
+
+#About
+
+Theme is inspired by [vim darkblue colorscheme](github.com/vim/colorschemes/blob/master/colors/darkblue.vim)
+
+#Main packages installed
+
+`sudo apt install i3status feh rofi eog moc zathura scrot`
+
+#Screenshots
+
+![moc](/assets/images/moc.png)
+![vim](/assets/images/vim.png)
+![zathura](/assets/images/zathura.png)
+![neofetch](/assets/images/neofetch.png)
+![tty-clock](/assets/images/tty-clock.png)
+
+
+
