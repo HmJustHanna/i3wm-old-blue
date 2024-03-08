@@ -5,7 +5,7 @@ Theme is inspired by [vim darkblue colorscheme](github.com/vim/colorschemes/blob
 
 # Main packages installed
 
-`sudo apt install i3status feh rofi eog moc zathura scrot`
+`sudo apt install i3status feh rofi moc zathura scrot`
 
 # Screenshots
 
